@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40F3B2EE27764A61003D8C58 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B2ED27764A61003D8C58 /* main.cpp */; };
+		40F3B321277A8DBA003D8C58 /* Matrix.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B31D277A8DBA003D8C58 /* Matrix.hpp */; };
+		40F3B323277A8DBA003D8C58 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B31F277A8DBA003D8C58 /* Expression.cpp */; };
+		40F3B324277A8DBA003D8C58 /* Expression.h in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B320277A8DBA003D8C58 /* Expression.h */; };
+		40F3B326277A8DD8003D8C58 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B325277A8DD8003D8C58 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,11 @@
 
 /* Begin PBXFileReference section */
 		40F3B2EA27764A61003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SymbolicMath; sourceTree = BUILT_PRODUCTS_DIR; };
-		40F3B2ED27764A61003D8C58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		40F3B300277A86A2003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SymbolicMath; sourceTree = "<group>"; };
+		40F3B31D277A8DBA003D8C58 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Matrix.hpp; path = math/Matrix.hpp; sourceTree = "<group>"; };
+		40F3B31F277A8DBA003D8C58 /* Expression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Expression.cpp; path = math/Expression.cpp; sourceTree = "<group>"; };
+		40F3B320277A8DBA003D8C58 /* Expression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = math/Expression.h; sourceTree = "<group>"; };
+		40F3B325277A8DD8003D8C58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +48,11 @@
 		40F3B2E127764A61003D8C58 = {
 			isa = PBXGroup;
 			children = (
-				40F3B2EC27764A61003D8C58 /* SymbolicMath */,
+				40F3B325277A8DD8003D8C58 /* main.cpp */,
+				40F3B31F277A8DBA003D8C58 /* Expression.cpp */,
+				40F3B320277A8DBA003D8C58 /* Expression.h */,
+				40F3B31D277A8DBA003D8C58 /* Matrix.hpp */,
+				40F3B300277A86A2003D8C58 /* SymbolicMath */,
 				40F3B2EB27764A61003D8C58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,14 +63,6 @@
 				40F3B2EA27764A61003D8C58 /* SymbolicMath */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		40F3B2EC27764A61003D8C58 /* SymbolicMath */ = {
-			isa = PBXGroup;
-			children = (
-				40F3B2ED27764A61003D8C58 /* main.cpp */,
-			);
-			path = SymbolicMath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +122,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40F3B2EE27764A61003D8C58 /* main.cpp in Sources */,
+				40F3B326277A8DD8003D8C58 /* main.cpp in Sources */,
+				40F3B321277A8DBA003D8C58 /* Matrix.hpp in Sources */,
+				40F3B323277A8DBA003D8C58 /* Expression.cpp in Sources */,
+				40F3B324277A8DBA003D8C58 /* Expression.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
