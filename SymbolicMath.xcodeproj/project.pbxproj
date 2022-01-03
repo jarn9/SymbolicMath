@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402B586E2781311D00401B02 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 402B586D2781311D00401B02 /* Node.cpp */; };
 		40F3B321277A8DBA003D8C58 /* Matrix.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B31D277A8DBA003D8C58 /* Matrix.hpp */; };
 		40F3B323277A8DBA003D8C58 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B31F277A8DBA003D8C58 /* Expression.cpp */; };
 		40F3B324277A8DBA003D8C58 /* Expression.h in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B320277A8DBA003D8C58 /* Expression.h */; };
@@ -26,8 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		402B586D2781311D00401B02 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = math/Node.cpp; sourceTree = "<group>"; };
 		40F3B2EA27764A61003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SymbolicMath; sourceTree = BUILT_PRODUCTS_DIR; };
-		40F3B300277A86A2003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SymbolicMath; sourceTree = "<group>"; };
+		40F3B300277A86A2003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SymbolicMath; sourceTree = "<group>"; };
 		40F3B31D277A8DBA003D8C58 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Matrix.hpp; path = math/Matrix.hpp; sourceTree = "<group>"; };
 		40F3B31F277A8DBA003D8C58 /* Expression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Expression.cpp; path = math/Expression.cpp; sourceTree = "<group>"; };
 		40F3B320277A8DBA003D8C58 /* Expression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = math/Expression.h; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		40F3B2E127764A61003D8C58 = {
 			isa = PBXGroup;
 			children = (
+				402B586D2781311D00401B02 /* Node.cpp */,
 				40F3B325277A8DD8003D8C58 /* main.cpp */,
 				40F3B31F277A8DBA003D8C58 /* Expression.cpp */,
 				40F3B320277A8DBA003D8C58 /* Expression.h */,
@@ -126,6 +129,7 @@
 				40F3B321277A8DBA003D8C58 /* Matrix.hpp in Sources */,
 				40F3B323277A8DBA003D8C58 /* Expression.cpp in Sources */,
 				40F3B324277A8DBA003D8C58 /* Expression.h in Sources */,
+				402B586E2781311D00401B02 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
