@@ -15,60 +15,57 @@
 //   /\
 //  x  y
 
-#ifndef Equation_h
-#define Equation_h
+#ifndef Expression_h
+#define Expression_h
 
 #include <string>
 #include <vector>
-
-enum class Op {
-    ADD,
-    SUBTRACT,
-    MULTIPLY,
-    DIVIDE,
-    SCALAR // leaf type
-};
+#include "Operations.h"
 
 class Node {
 public:
-    Node(Op nodeType, std::string val, Node* left, Node* right);
-    Node(const Node*);
+    Node(Op nodeType, std::string val, std::vector< std::shared_ptr<Node> > children);
     
     Op nodeType;
     std::string value;
-    Node* left;
-    Node* right;
+    std::vector< std::shared_ptr<Node> > children;
     
-    static Node* copyNode(const Node*);
-    static Node* substitute(Node*, std::string oldVal, std::string newVal);
-    static Node* simplify(Node*);
-    static Node* differentiate(Node*, const std::string var);
-    static Node* operate(Node* lhs, Node* rhs, Op opType);
-    static double evaluate(Node*);
+    void substitute(const std::string& oldVal, const std::string& newVal);
+    double evaluate();
 };
 
 class Expression {
 public:
-    Node* root;
-    
     Expression();
-    Expression(std::string value);
-    Expression(const Expression&, const Expression&, Op);
+    Expression(const std::string&);
+    Expression(Op, const std::vector<Expression>&);
+    Expression(const Expression&);
+    Expression operator = (const Expression&);
     
-    double evaluate();
+    virtual double evaluate();
     Expression simplify();
-    Expression substitute(std::string oldValue, std::string newValue);
-    Expression differentiate(const std::string variable);
+    Expression substitute(const std::string& oldValue, const std::string& newValue);
+    Expression differentiate(const std::string& variable);
     Expression operator + (const Expression& rhs);
     Expression operator * (const Expression& rhs);
     Expression operator / (const Expression& rhs);
     Expression operator - (const Expression& rhs);
+    bool operator == (const Expression& rhs) const;
     
-private:
-    Expression(Node*);
+    std::shared_ptr<Node> root;
+    
+protected:
+    Expression(std::shared_ptr<Node>);
+    
+    static std::shared_ptr<Node> simplifyHelper(std::shared_ptr<Node>);
+    static std::shared_ptr<Node> substituteHelper(std::shared_ptr<Node>, const std::string&, const std::string&);
+    static std::shared_ptr<Node> differentiateHelper(std::shared_ptr<Node>, const std::string&);
+    static double evaluateHelper(std::shared_ptr<Node>);
+    static bool equalityHelper(const std::shared_ptr<Node> a, const std::shared_ptr<Node> b);
+    static std::shared_ptr<Node> copyTree(const std::shared_ptr<Node>);
 };
 
 std::ostream& operator<<(std::ostream&, const Expression&);
-std::ostream& operator<<(std::ostream&, const Node&);
+std::ostream& operator<<(std::ostream&, const std::shared_ptr<Node>);
 
 #endif /* Expression_h */

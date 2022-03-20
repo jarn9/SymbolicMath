@@ -9,8 +9,10 @@
 #define Matrix_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <cassert>
 #include <vector>
+#include <math.h>
 
 template <typename T>
 class Matrix2D {
@@ -31,15 +33,8 @@ public:
         }
     }
     
-    Matrix2D(const Matrix2D& oldMatrix) {
-        numRows = oldMatrix.numRows;
-        numColumns = oldMatrix.numColumns;
-        data = oldMatrix.data;
-    }
-    
-    Matrix2D& operator=(const Matrix2D& rhs) {
-        return Matrix2D(rhs);
-    }
+    Matrix2D(const Matrix2D& oldMatrix) :
+    numRows(oldMatrix.numRows), numColumns(oldMatrix.numColumns), data(oldMatrix.data) {}
     
     Matrix2D operator+ (const Matrix2D& M2) {
         assert(M2.numRows == numRows);
@@ -47,13 +42,23 @@ public:
         
         auto newMatrix = Matrix2D<T>(numRows, numColumns);
         for (unsigned int i = 0; i < data.size(); ++i){
-            newMatrix.data[i] = M2.data[i] + data[i];
+            newMatrix.data[i] = data[i] + M2.data[i];
         }
-        
         return newMatrix;
     }
     
-    Matrix2D operator* (Matrix2D& M2) {
+    Matrix2D operator- (const Matrix2D& M2) {
+        assert(M2.numRows == numRows);
+        assert(M2.numColumns == numColumns);
+        
+        auto newMatrix = Matrix2D<T>(numRows, numColumns);
+        for (unsigned int i = 0; i < data.size(); ++i){
+            newMatrix.data[i] = data[i] - M2.data[i];
+        }
+        return newMatrix;
+    }
+    
+    Matrix2D operator* (const Matrix2D& M2) {
         assert(numColumns == M2.numRows);
         
         auto newMatrix = Matrix2D<T>(numRows, M2.numColumns);
@@ -65,13 +70,25 @@ public:
                 }
             }
         }
-        
+        return newMatrix;
+    }
+    
+    Matrix2D operator* (const double a) {
+        auto newMatrix = Matrix2D<T>(numRows, numColumns);
+        for (int i = 0; i < data.size(); ++i){
+            newMatrix[i] = data[i]*a;
+        }
         return newMatrix;
     }
     
     T& operator() (int row, int col){
         return data[row + col*numRows];
     }
+    
+    T& operator() (int index){
+        return data[index];
+    }
+
     
     T& operator[] (int index){
         return data[index];
@@ -86,6 +103,26 @@ public:
         }
         return newMatrix;
     }
+    
+    T max(){
+        T max = data[0];
+        for (T& el : data) {
+            max = el > max ? el : max;
+        }
+        return max;
+    }
+    
+    T min(){
+        T min = data[0];
+        for (T& el : data) {
+            min = el < min ? el : min;
+        }
+        return min;
+    }
+    
+    int numel(){
+        return numRows*numColumns;
+    }
 };
 
 template <typename T>
@@ -94,7 +131,7 @@ std::ostream& operator<<(std::ostream& os, const Matrix2D<T>& M){
         for (int col = 0; col < M.numColumns; ++col){
             os << M.data[row + col*M.numRows] << ", ";
         }
-        std::cout << std::endl;
+        os << std::endl;
     }
     return os;
 }

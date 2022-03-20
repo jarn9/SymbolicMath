@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		402EC4002783B49F00EF522D /* Implicit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 402EC3FE2783B49F00EF522D /* Implicit.cpp */; };
-		402EC405278A31E900EF522D /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 402EC401278A31E800EF522D /* Node.cpp */; };
-		402EC406278A31E900EF522D /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 402EC404278A31E900EF522D /* Expression.cpp */; };
-		40F3B326277A8DD8003D8C58 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B325277A8DD8003D8C58 /* main.cpp */; };
+		404BF71527E7ECCB00536467 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 404BF71327E7ECCB00536467 /* Node.cpp */; };
+		4073C3B327E7E8BB004C6339 /* Implicit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4073C3B227E7E8BB004C6339 /* Implicit.cpp */; };
+		4073C3B827E7E8D1004C6339 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4073C3B527E7E8D1004C6339 /* Expression.cpp */; };
+		40EF9FBF27E7E3B5003029D2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40F3B325277A8DD8003D8C58 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		40F3B2E827764A61003D8C58 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
@@ -26,13 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4008D4B2278A75220050F2C0 /* ExpressionTests.t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionTests.t.h; sourceTree = "<group>"; };
-		402EC3FE2783B49F00EF522D /* Implicit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Implicit.cpp; sourceTree = "<group>"; };
-		402EC3FF2783B49F00EF522D /* Implicit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Implicit.hpp; sourceTree = "<group>"; };
-		402EC401278A31E800EF522D /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		402EC402278A31E800EF522D /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
-		402EC403278A31E800EF522D /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
-		402EC404278A31E900EF522D /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
+		404BF71327E7ECCB00536467 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = math/Node.cpp; sourceTree = "<group>"; };
+		404BF71427E7ECCB00536467 /* Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Operations.h; path = math/Operations.h; sourceTree = "<group>"; };
+		4073C3B127E7E8BB004C6339 /* Implicit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Implicit.hpp; path = geo/Implicit.hpp; sourceTree = "<group>"; };
+		4073C3B227E7E8BB004C6339 /* Implicit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Implicit.cpp; path = geo/Implicit.cpp; sourceTree = "<group>"; };
+		4073C3B427E7E8D1004C6339 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = math/Expression.h; sourceTree = "<group>"; };
+		4073C3B527E7E8D1004C6339 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Expression.cpp; path = math/Expression.cpp; sourceTree = "<group>"; };
+		4073C3B627E7E8D1004C6339 /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Matrix.hpp; path = math/Matrix.hpp; sourceTree = "<group>"; };
+		4073C3B727E7E8D1004C6339 /* ExpressionTests.t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionTests.t.h; path = math/ExpressionTests.t.h; sourceTree = "<group>"; };
 		40F3B2EA27764A61003D8C58 /* SymbolicMath */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SymbolicMath; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F3B325277A8DD8003D8C58 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,14 +52,15 @@
 		40F3B2E127764A61003D8C58 = {
 			isa = PBXGroup;
 			children = (
-				402EC3FE2783B49F00EF522D /* Implicit.cpp */,
-				402EC3FF2783B49F00EF522D /* Implicit.hpp */,
+				4073C3B527E7E8D1004C6339 /* Expression.cpp */,
+				4073C3B427E7E8D1004C6339 /* Expression.h */,
+				4073C3B727E7E8D1004C6339 /* ExpressionTests.t.h */,
+				4073C3B227E7E8BB004C6339 /* Implicit.cpp */,
+				4073C3B127E7E8BB004C6339 /* Implicit.hpp */,
 				40F3B325277A8DD8003D8C58 /* main.cpp */,
-				4008D4B2278A75220050F2C0 /* ExpressionTests.t.h */,
-				402EC404278A31E900EF522D /* Expression.cpp */,
-				402EC403278A31E800EF522D /* Expression.h */,
-				402EC402278A31E800EF522D /* Matrix.hpp */,
-				402EC401278A31E800EF522D /* Node.cpp */,
+				4073C3B627E7E8D1004C6339 /* Matrix.hpp */,
+				404BF71327E7ECCB00536467 /* Node.cpp */,
+				404BF71427E7ECCB00536467 /* Operations.h */,
 				40F3B2EB27764A61003D8C58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +100,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					40F3B2E927764A61003D8C58 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -128,10 +130,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402EC405278A31E900EF522D /* Node.cpp in Sources */,
-				40F3B326277A8DD8003D8C58 /* main.cpp in Sources */,
-				402EC4002783B49F00EF522D /* Implicit.cpp in Sources */,
-				402EC406278A31E900EF522D /* Expression.cpp in Sources */,
+				4073C3B327E7E8BB004C6339 /* Implicit.cpp in Sources */,
+				4073C3B827E7E8D1004C6339 /* Expression.cpp in Sources */,
+				40EF9FBF27E7E3B5003029D2 /* main.cpp in Sources */,
+				404BF71527E7ECCB00536467 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +254,7 @@
 		40F3B2F227764A61003D8C58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -260,6 +263,7 @@
 		40F3B2F327764A61003D8C58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
