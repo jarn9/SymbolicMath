@@ -6,24 +6,26 @@
 //
 
 #include <iostream>
-#include "Expression.h"
+#include "Implicit.hpp"
 #include "Matrix.hpp"
+#include "Operations.h"
+#include "Expression.h"
+#include "ExpressionTests.t.h"
 
 int main(int argc, const char * argv[]) {
-    Expression x = Expression("x");
-    auto y = Expression("y");
+    Implicit x = Implicit(Axes::X);
+    auto x2 = Implicit(Op::MULTIPLY, std::vector<Implicit>{x, x});
+    Implicit y = Implicit(Axes::Y);
+    auto y2 = Implicit(Op::MULTIPLY, std::vector<Implicit>{y, y});
+    auto x2py2 = Implicit(Op::ADD, std::vector<Implicit>{x2, y2});
+    auto shape = Implicit(Op::SUBTRACT, {x2py2, Implicit(3.0)});
     
-    auto x2 = x*x;
-    auto y2 = y*y;
-    auto F = x2 + y2;
-
-    auto Fx = F.differentiate("x");
-    auto Fy = F.differentiate("y");
-
-    auto grad = Matrix2D<Expression>(2, 1);
-    grad(0,0) = Fx;
-    grad(1,0) = Fy;
-
-    std::cout << grad << std::endl;
+    std::cout << shape << std::endl;
+    std::cout << shape.getZeros(Matrix2D<double>(3, 1, 1)) << std::endl;
+    
+//    test_operators();
+//    test_simplify();
+//    test_differentiate(true);
+//    test_memory_leaks();
     return 0;
 }
